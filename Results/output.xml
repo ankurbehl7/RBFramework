@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220514 13:02:33.151" rpa="false" schemaversion="3">
+<suite id="s1" name="Search" source="C:\Users\ASUS\PycharmProjects\RBFramework\Tests\search.robot">
+<test id="s1-t1" name="This is a demo test" line="8">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://ebay.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220514 13:02:33.308" level="INFO">Opening browser 'chrome' to base url 'https://ebay.com'.</msg>
+<status status="PASS" starttime="20220514 13:02:33.308" endtime="20220514 13:02:37.371"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220514 13:02:37.373" endtime="20220514 13:02:37.489"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="gh-ac"]</arg>
+<arg>mobile</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220514 13:02:37.490" level="INFO">Typing text 'mobile' into text field '//*[@id="gh-ac"]'.</msg>
+<status status="PASS" starttime="20220514 13:02:37.490" endtime="20220514 13:02:37.608"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>//*[@id="gh-btn"]</arg>
+<arg>[Return]</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220514 13:02:37.609" level="INFO">Sending key(s) ('[Return]',) to //*[@id="gh-btn"] element.</msg>
+<msg timestamp="20220514 13:02:37.622" level="INFO">Sending keys [Return]</msg>
+<status status="PASS" starttime="20220514 13:02:37.609" endtime="20220514 13:02:39.726"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>results for mobile</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220514 13:02:39.863" level="INFO">Current page contains text 'results for mobile'.</msg>
+<status status="PASS" starttime="20220514 13:02:39.727" endtime="20220514 13:02:39.863"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220514 13:02:39.864" endtime="20220514 13:02:42.001"/>
+</kw>
+<doc>Ebay test for search element</doc>
+<tag>Functional</tag>
+<status status="PASS" starttime="20220514 13:02:33.307" endtime="20220514 13:02:42.001"/>
+</test>
+<status status="PASS" starttime="20220514 13:02:33.153" endtime="20220514 13:02:42.004"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Functional</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Search">Search</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
