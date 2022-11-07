@@ -2,8 +2,8 @@
 *** Settings ***
 Library  SeleniumLibrary
 
-
 *** Variables ***
+#Create Webdriver    Chrome  executable_path=C:/WebDrivers/chromedriver.exe
 ${browser}  chrome
 ${url}  https://qa.applivetest.com/Login/
 
@@ -11,8 +11,9 @@ ${url}  https://qa.applivetest.com/Login/
 This is a demo test
     [Documentation]  Ebay test for search element
     [Tags]  Functional
-
     Open Browser  ${url}  ${browser}
+
+
     Maximize Browser Window
     Login to application without username
 
@@ -44,7 +45,7 @@ Login to application without username
 
 Login to application successfully
     ${"username"}   set variable    //input[@id="UserName"]
-
+    ${"homepage_title"}     Set Variable    //a[text()=" Screen-shot Tool "]
     Input Text  ${"username"}   testdemo2
 
     element should be visible   ${"username"}
@@ -53,5 +54,6 @@ Login to application successfully
 
     click element   //button[@id="cmdLogin"]
     sleep   3
-    element should be visible   //a[text()=" Screen-shot Tool "]
+    Element Should Not Be Visible    ${"homepage_title"}
+
     Close Browser
