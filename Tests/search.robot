@@ -1,25 +1,29 @@
 
 *** Settings ***
 Library  SeleniumLibrary
-
+Library  driversync.py
 
 *** Variables ***
-${browser}  chrome
 ${url}  https://qa.applivetest.com/Login/
+
 
 *** Test Cases ***
 This is a demo test
-    [Documentation]  Ebay test for search element
-    [Tags]  Functional
+    ${chromedriver_path}=   driversync.Get Driver Path With Browser        Chrome
 
-    Open Browser  ${url}  ${browser}
+    Create Webdriver    Chrome   executable_path=${chromedriver_path}
+
+    Go To  ${url}
     Maximize Browser Window
     Login to application without username
 
 *** Test Cases ***
 This is Login test
+    ${chromedriver_path}=   driversync.Get Driver Path With Browser        Chrome
 
-    Open Browser  ${url}  ${browser}
+    Create Webdriver    Chrome   executable_path=${chromedriver_path}
+
+    Go To  ${url}
     Maximize Browser Window
     Login to application successfully
 
@@ -44,7 +48,7 @@ Login to application without username
 
 Login to application successfully
     ${"username"}   set variable    //input[@id="UserName"]
-
+    ${"homepage_title"}     Set Variable    //a[text()=" Screen-shot Tool "]
     Input Text  ${"username"}   testdemo2
 
     element should be visible   ${"username"}
@@ -53,5 +57,6 @@ Login to application successfully
 
     click element   //button[@id="cmdLogin"]
     sleep   3
-    element should be visible   //a[text()=" Screen-shot Tool "]
+    Element Should Not Be Visible    ${"homepage_title"}
+
     Close Browser

@@ -1,156 +1,226 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20221018 13:13:52.485" rpa="false" schemaversion="3">
-<suite id="s1" name="Search" source="C:\Users\ASUS\PycharmProjects\RBFramework\Tests\search.robot">
-<test id="s1-t1" name="This is a demo test" line="11">
+<robot generator="Robot 6.0 (Python 3.10.4 on win32)" generated="20221207 16:08:14.265" rpa="false" schemaversion="3">
+<suite id="s1" name="Search" source="D:\PycharmProject\RBFramework\Tests\search.robot">
+<test id="s1-t1" name="demo webdriver manager using robotframework" line="10">
+<kw name="Get Driver Path With Browser" library="driversync">
+<var>${driver_path}</var>
+<arg>Chrome</arg>
+<msg timestamp="20221207 16:08:14.485" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20221207 16:08:14.884" level="INFO">Get LATEST chromedriver version for google-chrome 108.0.5359</msg>
+<msg timestamp="20221207 16:08:15.685" level="INFO">Driver [C:\Users\ASUS\.wdm\drivers\chromedriver\win32\108.0.5359\chromedriver.exe] found in cache</msg>
+<msg timestamp="20221207 16:08:15.685" level="INFO">C:\Users\ASUS\.wdm\drivers\chromedriver\win32\108.0.5359\chromedriver.exe</msg>
+<msg timestamp="20221207 16:08:15.685" level="INFO">${driver_path} = C:\Users\ASUS\.wdm\drivers\chromedriver\win32\108.0.5359\chromedriver.exe</msg>
+<status status="PASS" starttime="20221207 16:08:14.485" endtime="20221207 16:08:15.685"/>
+</kw>
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>${url}</arg>
-<arg>${browser}</arg>
+<arg>Chrome</arg>
+<arg>executable_path=${driver_path}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221018 13:13:52.817" level="INFO">Opening browser 'chrome' to base url 'https://qa.applivetest.com/Login/'.</msg>
-<status status="PASS" starttime="20221018 13:13:52.817" endtime="20221018 13:14:00.751"/>
+<msg timestamp="20221207 16:08:15.685" level="INFO">Opening browser 'firefox' to base url 'Chrome'.</msg>
+<msg timestamp="20221207 16:08:15.685" level="INFO">Firefox driver log is always forced to to: D:\PycharmProject\RBFramework\geckodriver-3.log</msg>
+<msg timestamp="20221207 16:08:18.226" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20221207 16:08:18.226" level="FAIL">WebDriverException: Message: Service C:\Users\ASUS\.wdm\drivers\chromedriver\win32\108.0.5359\chromedriver.exe unexpectedly exited. Status code was: 1
+</msg>
+<status status="FAIL" starttime="20221207 16:08:15.685" endtime="20221207 16:08:18.242"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://pypi.org/project/webdriver-manager/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="NOT RUN" starttime="20221207 16:08:18.242" endtime="20221207 16:08:18.242"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20221207 16:08:18.242" endtime="20221207 16:08:18.242"/>
+</kw>
+<status status="FAIL" starttime="20221207 16:08:14.485" endtime="20221207 16:08:18.242">WebDriverException: Message: Service C:\Users\ASUS\.wdm\drivers\chromedriver\win32\108.0.5359\chromedriver.exe unexpectedly exited. Status code was: 1
+</status>
+</test>
+<test id="s1-t2" name="This is a demo test" line="17">
+<kw name="Get Driver Path With Browser" library="driversync">
+<var>${chromedriver_path}</var>
+<arg>Chrome</arg>
+<msg timestamp="20221207 16:08:18.242" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20221207 16:08:18.637" level="INFO">Get LATEST chromedriver version for google-chrome 108.0.5359</msg>
+<msg timestamp="20221207 16:08:19.240" level="INFO">Driver [C:\Users\ASUS\.wdm\drivers\chromedriver\win32\108.0.5359\chromedriver.exe] found in cache</msg>
+<msg timestamp="20221207 16:08:19.240" level="INFO">C:\Users\ASUS\.wdm\drivers\chromedriver\win32\108.0.5359\chromedriver.exe</msg>
+<msg timestamp="20221207 16:08:19.240" level="INFO">${chromedriver_path} = C:\Users\ASUS\.wdm\drivers\chromedriver\win32\108.0.5359\chromedriver.exe</msg>
+<status status="PASS" starttime="20221207 16:08:18.242" endtime="20221207 16:08:19.240"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${chromedriver_path}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20221207 16:08:19.240" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20221207 16:08:19.240" endtime="20221207 16:08:20.281"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20221207 16:08:20.283" level="INFO">Opening url 'https://qa.applivetest.com/Login/'</msg>
+<status status="PASS" starttime="20221207 16:08:20.283" endtime="20221207 16:08:28.199"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221018 13:14:00.752" endtime="20221018 13:14:00.881"/>
+<status status="PASS" starttime="20221207 16:08:28.200" endtime="20221207 16:08:28.328"/>
 </kw>
 <kw name="Login to application without username">
 <kw name="Set Variable" library="BuiltIn">
 <var>${"username"}</var>
 <arg>//input[@id="UserName"]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221018 13:14:00.881" level="INFO">${"username"} = //input[@id="UserName"]</msg>
-<status status="PASS" starttime="20221018 13:14:00.881" endtime="20221018 13:14:00.881"/>
+<msg timestamp="20221207 16:08:28.328" level="INFO">${"username"} = //input[@id="UserName"]</msg>
+<status status="PASS" starttime="20221207 16:08:28.328" endtime="20221207 16:08:28.328"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${"username"}</arg>
 <arg>testdemo2</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221018 13:14:00.881" level="INFO">Typing text 'testdemo2' into text field '//input[@id="UserName"]'.</msg>
-<status status="PASS" starttime="20221018 13:14:00.881" endtime="20221018 13:14:01.084"/>
+<msg timestamp="20221207 16:08:28.328" level="INFO">Typing text 'testdemo2' into text field '//input[@id="UserName"]'.</msg>
+<status status="PASS" starttime="20221207 16:08:28.328" endtime="20221207 16:08:28.455"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${"username"}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20221018 13:14:01.112" level="INFO">Element '//input[@id="UserName"]' is displayed.</msg>
-<status status="PASS" starttime="20221018 13:14:01.084" endtime="20221018 13:14:01.112"/>
+<msg timestamp="20221207 16:08:28.472" level="INFO">Element '//input[@id="UserName"]' is displayed.</msg>
+<status status="PASS" starttime="20221207 16:08:28.455" endtime="20221207 16:08:28.472"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>//input[@id="Password"]</arg>
 <arg>123456789</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221018 13:14:01.120" level="INFO">Typing text '123456789' into text field '//input[@id="Password"]'.</msg>
-<status status="PASS" starttime="20221018 13:14:01.120" endtime="20221018 13:14:01.274"/>
+<msg timestamp="20221207 16:08:28.473" level="INFO">Typing text '123456789' into text field '//input[@id="Password"]'.</msg>
+<status status="PASS" starttime="20221207 16:08:28.472" endtime="20221207 16:08:28.547"/>
 </kw>
 <kw name="Clear Element Text" library="SeleniumLibrary">
 <arg>${"username"}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" starttime="20221018 13:14:01.274" endtime="20221018 13:14:01.339"/>
+<status status="PASS" starttime="20221207 16:08:28.548" endtime="20221207 16:08:28.570"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>//button[@id="cmdLogin"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221018 13:14:01.339" level="INFO">Clicking element '//button[@id="cmdLogin"]'.</msg>
-<status status="PASS" starttime="20221018 13:14:01.339" endtime="20221018 13:14:01.449"/>
+<msg timestamp="20221207 16:08:28.570" level="INFO">Clicking element '//button[@id="cmdLogin"]'.</msg>
+<status status="PASS" starttime="20221207 16:08:28.570" endtime="20221207 16:08:28.622"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221018 13:14:04.461" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20221018 13:14:01.449" endtime="20221018 13:14:04.461"/>
+<msg timestamp="20221207 16:08:31.627" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20221207 16:08:28.623" endtime="20221207 16:08:31.627"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>//div[text()="Please Enter User ID"]</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20221018 13:14:04.504" level="INFO">Element '//div[text()="Please Enter User ID"]' is displayed.</msg>
-<status status="PASS" starttime="20221018 13:14:04.461" endtime="20221018 13:14:04.505"/>
+<msg timestamp="20221207 16:08:31.650" level="INFO">Element '//div[text()="Please Enter User ID"]' is displayed.</msg>
+<status status="PASS" starttime="20221207 16:08:31.627" endtime="20221207 16:08:31.650"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221018 13:14:04.505" endtime="20221018 13:14:06.770"/>
+<status status="PASS" starttime="20221207 16:08:31.650" endtime="20221207 16:08:33.781"/>
 </kw>
-<status status="PASS" starttime="20221018 13:14:00.881" endtime="20221018 13:14:06.771"/>
+<status status="PASS" starttime="20221207 16:08:28.328" endtime="20221207 16:08:33.781"/>
 </kw>
-<doc>Ebay test for search element</doc>
-<tag>Functional</tag>
-<status status="PASS" starttime="20221018 13:13:52.817" endtime="20221018 13:14:06.772"/>
+<status status="PASS" starttime="20221207 16:08:18.242" endtime="20221207 16:08:33.781"/>
 </test>
-<test id="s1-t2" name="This is Login test" line="20">
-<kw name="Open Browser" library="SeleniumLibrary">
+<test id="s1-t3" name="This is Login test" line="27">
+<kw name="Get Driver Path With Browser" library="driversync">
+<var>${chromedriver_path}</var>
+<arg>Chrome</arg>
+<msg timestamp="20221207 16:08:33.783" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20221207 16:08:34.274" level="INFO">Get LATEST chromedriver version for google-chrome 108.0.5359</msg>
+<msg timestamp="20221207 16:08:34.921" level="INFO">Driver [C:\Users\ASUS\.wdm\drivers\chromedriver\win32\108.0.5359\chromedriver.exe] found in cache</msg>
+<msg timestamp="20221207 16:08:34.921" level="INFO">C:\Users\ASUS\.wdm\drivers\chromedriver\win32\108.0.5359\chromedriver.exe</msg>
+<msg timestamp="20221207 16:08:34.921" level="INFO">${chromedriver_path} = C:\Users\ASUS\.wdm\drivers\chromedriver\win32\108.0.5359\chromedriver.exe</msg>
+<status status="PASS" starttime="20221207 16:08:33.783" endtime="20221207 16:08:34.921"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${chromedriver_path}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20221207 16:08:34.921" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20221207 16:08:34.921" endtime="20221207 16:08:35.973"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
 <arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221018 13:14:06.778" level="INFO">Opening browser 'chrome' to base url 'https://qa.applivetest.com/Login/'.</msg>
-<status status="PASS" starttime="20221018 13:14:06.777" endtime="20221018 13:14:12.753"/>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20221207 16:08:35.974" level="INFO">Opening url 'https://qa.applivetest.com/Login/'</msg>
+<status status="PASS" starttime="20221207 16:08:35.974" endtime="20221207 16:08:42.629"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221018 13:14:12.753" endtime="20221018 13:14:12.888"/>
+<status status="PASS" starttime="20221207 16:08:42.630" endtime="20221207 16:08:42.747"/>
 </kw>
 <kw name="Login to application successfully">
 <kw name="Set Variable" library="BuiltIn">
 <var>${"username"}</var>
 <arg>//input[@id="UserName"]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20221018 13:14:12.890" level="INFO">${"username"} = //input[@id="UserName"]</msg>
-<status status="PASS" starttime="20221018 13:14:12.890" endtime="20221018 13:14:12.890"/>
+<msg timestamp="20221207 16:08:42.747" level="INFO">${"username"} = //input[@id="UserName"]</msg>
+<status status="PASS" starttime="20221207 16:08:42.747" endtime="20221207 16:08:42.747"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${"homepage_title"}</var>
+<arg>//a[text()=" Screen-shot Tool "]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221207 16:08:42.747" level="INFO">${"homepage_title"} = //a[text()=" Screen-shot Tool "]</msg>
+<status status="PASS" starttime="20221207 16:08:42.747" endtime="20221207 16:08:42.747"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${"username"}</arg>
 <arg>testdemo2</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221018 13:14:12.890" level="INFO">Typing text 'testdemo2' into text field '//input[@id="UserName"]'.</msg>
-<status status="PASS" starttime="20221018 13:14:12.890" endtime="20221018 13:14:13.034"/>
+<msg timestamp="20221207 16:08:42.747" level="INFO">Typing text 'testdemo2' into text field '//input[@id="UserName"]'.</msg>
+<status status="PASS" starttime="20221207 16:08:42.747" endtime="20221207 16:08:42.857"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${"username"}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20221018 13:14:13.060" level="INFO">Element '//input[@id="UserName"]' is displayed.</msg>
-<status status="PASS" starttime="20221018 13:14:13.034" endtime="20221018 13:14:13.060"/>
+<msg timestamp="20221207 16:08:42.873" level="INFO">Element '//input[@id="UserName"]' is displayed.</msg>
+<status status="PASS" starttime="20221207 16:08:42.857" endtime="20221207 16:08:42.873"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>//input[@id="Password"]</arg>
 <arg>123456789</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221018 13:14:13.061" level="INFO">Typing text '123456789' into text field '//input[@id="Password"]'.</msg>
-<status status="PASS" starttime="20221018 13:14:13.061" endtime="20221018 13:14:13.167"/>
+<msg timestamp="20221207 16:08:42.874" level="INFO">Typing text '123456789' into text field '//input[@id="Password"]'.</msg>
+<status status="PASS" starttime="20221207 16:08:42.874" endtime="20221207 16:08:42.947"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>//button[@id="cmdLogin"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221018 13:14:13.167" level="INFO">Clicking element '//button[@id="cmdLogin"]'.</msg>
-<status status="PASS" starttime="20221018 13:14:13.167" endtime="20221018 13:14:22.846"/>
+<msg timestamp="20221207 16:08:42.947" level="INFO">Clicking element '//button[@id="cmdLogin"]'.</msg>
+<status status="PASS" starttime="20221207 16:08:42.947" endtime="20221207 16:08:59.724"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221018 13:14:25.857" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20221018 13:14:22.846" endtime="20221018 13:14:25.858"/>
+<msg timestamp="20221207 16:09:02.732" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20221207 16:08:59.724" endtime="20221207 16:09:02.732"/>
 </kw>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>//a[text()=" Screen-shot Tool "]</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20221018 13:14:25.926" level="INFO">Element '//a[text()=" Screen-shot Tool "]' is displayed.</msg>
-<status status="PASS" starttime="20221018 13:14:25.858" endtime="20221018 13:14:25.926"/>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>${"homepage_title"}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<msg timestamp="20221207 16:09:02.748" level="INFO">Element '//a[text()=" Screen-shot Tool "]' did not exist.</msg>
+<status status="PASS" starttime="20221207 16:09:02.732" endtime="20221207 16:09:02.748"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221018 13:14:25.926" endtime="20221018 13:14:28.256"/>
+<status status="PASS" starttime="20221207 16:09:02.748" endtime="20221207 16:09:04.938"/>
 </kw>
-<status status="PASS" starttime="20221018 13:14:12.890" endtime="20221018 13:14:28.257"/>
+<status status="PASS" starttime="20221207 16:08:42.747" endtime="20221207 16:09:04.938"/>
 </kw>
-<status status="PASS" starttime="20221018 13:14:06.772" endtime="20221018 13:14:28.257"/>
+<status status="PASS" starttime="20221207 16:08:33.782" endtime="20221207 16:09:04.939"/>
 </test>
-<status status="PASS" starttime="20221018 13:13:52.485" endtime="20221018 13:14:28.262"/>
+<status status="FAIL" starttime="20221207 16:08:14.265" endtime="20221207 16:09:04.940"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Functional</stat>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="Search">Search</stat>
+<stat pass="2" fail="1" skip="0" id="s1" name="Search">Search</stat>
 </suite>
 </statistics>
 <errors>
